@@ -1,0 +1,17 @@
+{
+  "presets":["@babel/react", "@babel/env"],
+  "plugins": [
+    "dva-hmr",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime",
+    [
+      "import", {
+        "libraryName": "antd",
+        "style": true
+      }
+    ]
+//    ["import", { "libraryName": "lodash", "libraryDirectory": "",  "camel2DashComponentName": false}, "lodash"]
+  ]
+}
