@@ -19,7 +19,8 @@
     "react-container-query": "^0.11.0",
     "react-document-title": "^2.0.3",
     "react-dom": "^16.5.2",
-    "react-loadable": "^5.4.0"
+    "react-loadable": "^5.4.0",
+    "react-router-dom": "^4.3.1"
   },
   "scripts": {
     "start": "webpack-dev-server --colors --display-modules --inline --progress --config ./config/webpack.config.dev.js",
