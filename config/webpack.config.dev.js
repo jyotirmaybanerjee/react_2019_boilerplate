@@ -7,7 +7,7 @@ const os = require('os');
 
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const common = require('./webpack.config.base');
-const getThemeConfig = require('../theme.js');
+// const getThemeConfig = require('../theme.js');
 // const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 // const smp = new SpeedMeasurePlugin();
 // const Dashboard = require('webpack-dashboard');
@@ -18,7 +18,7 @@ function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
-const theme = getThemeConfig();
+// const theme = getThemeConfig();
 
 const mergedConfig = merge(common, {
   mode: 'development',
@@ -150,7 +150,7 @@ const mergedConfig = merge(common, {
             // strictMath: false,
             // noIeCompat: true,
             javascriptEnabled: true,
-            modifyVars: theme,
+            // modifyVars: theme,
           },
         },
       ],

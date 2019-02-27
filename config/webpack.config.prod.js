@@ -7,9 +7,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const common = require('./webpack.config.base');
-const getThemeConfig = require('../theme.js');
+// const getThemeConfig = require('../theme.js');
 
-const theme = getThemeConfig();
+// const theme = getThemeConfig();
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -85,7 +85,7 @@ module.exports = merge(common, {
               strictMath: false,
               noIeCompat: true,
               javascriptEnabled: true,
-              modifyVars: theme,
+              // modifyVars: theme,
             },
           },
         ],

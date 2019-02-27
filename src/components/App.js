@@ -3,6 +3,9 @@ import Drawer from 'rc-drawer';
 import omit from 'omit.js';
 import {Menu} from '../common/munu';
 import {Slides} from './Slide';
+import {Flash} from './flash/Flash';
+import {Search} from '../common/Search';
+
 import '../styles/App.scss';
 
 class App extends Component {
@@ -41,6 +44,12 @@ class App extends Component {
             </Drawer>
             <h1 onClick={this.onSwitch}>My React App!</h1>
             <Slides />
+            <Flash />
+            <div className="container h-100">
+              <div className="d-flex justify-content-center h-100">
+                <Search />
+              </div>
+            </div>
           </div>
         );
     }

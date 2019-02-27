@@ -1,10 +1,11 @@
 import React from 'react';
-import {Button, Form, FormControl, Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import {Form, Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import {Search} from './Search';
 
 export const Menu = () => {
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Jyotirmay</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -19,8 +20,7 @@ export const Menu = () => {
             </NavDropdown>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+            <Search />
           </Form>
         </Navbar.Collapse>
       </Navbar>
