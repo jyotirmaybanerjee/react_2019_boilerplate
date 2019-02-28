@@ -21,7 +21,10 @@
     "react-document-title": "^2.0.3",
     "react-dom": "^16.5.2",
     "react-loadable": "^5.4.0",
-    "react-router-dom": "^4.3.1"
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "start": "webpack-dev-server --colors --display-modules --inline --progress --config ./config/webpack.config.dev.js",
