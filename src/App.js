@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {Container} from 'react-bootstrap';
+// import {Container} from 'react-bootstrap';
 import Drawer from 'rc-drawer';
 import omit from 'omit.js';
+import {Route} from 'react-router-dom';
+
 import {Menu} from './common/Menu';
-import {Slides} from './components/Slide';
-import {Flash} from './components/flash/Flash';
-import {Search} from './common/Search';
+import {Home} from './components/home/components/Home';
 import {UserSearch} from './components/users/Users';
-import {TimeLine} from './common/Timeline';
+import {Events} from './components/events/components/Events';
 import {ProfileSettings} from './components/profile/Profile';
 
 import './styles/App.scss';
@@ -32,29 +32,7 @@ class App extends Component {
 
     render() {
         console.log(omit({ name: 'Benjy', age: 18 }, [ 'name' ])); // => { age: 18 }
-        const timeLines = [
-          {
-              heading: 'Timeline Heading',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.',
-              imgSrc: 'img/img13.png',
-              time: '2018-02-23',
-          }, {
-              heading: 'Timeline Heading',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.',
-              imgSrc: 'img/img13.png',
-              time: '2018-02-23',
-          }, {
-              heading: 'Timeline Heading',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.',
-              imgSrc: 'img/img13.png',
-              time: '2018-02-23',
-          }, {
-              heading: 'Timeline Heading',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.',
-              imgSrc: 'img/img13.png',
-              time: '2018-02-23',
-          },
-        ];
+        
         const {open} = this.state;
         return (
           <div>
@@ -69,9 +47,12 @@ class App extends Component {
             >
             menu children
             </Drawer>
-            <h1 onClick={this.onSwitch}>My React App!</h1>
-            <Slides />
-            <Flash />
+
+            <Route exact path="/" component={Home} />
+            <Route path="/events" component={Events} />
+            <Route path="/usersearch" component={UserSearch} />
+            <Route path="/profile" component={ProfileSettings} />
+            {/* <h1 onClick={this.onSwitch}>My React App!</h1> 
             <Container className="h-100">
               <div className="d-flex justify-content-center h-100">
                 <Search />
@@ -86,6 +67,7 @@ class App extends Component {
             <Container>
               <ProfileSettings />
             </Container>
+            */}
           </div>
         );
     }
