@@ -1,0 +1,16 @@
+.login-page {
+    background-color: #00263a;
+    position: fixed;
+    margin-top: -60px!important;
+    width: 100vw;
+    height: 110vh;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    .login-container {
+        margin-bottom: auto;
+        margin-top: 30vh;
+        height: 400px;
+        color: #b9b7b7;
+    }
+}

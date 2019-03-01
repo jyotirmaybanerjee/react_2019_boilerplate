@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 // import {Container} from 'react-bootstrap';
 import Drawer from 'rc-drawer';
 import omit from 'omit.js';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import {Menu} from './common/Menu';
 import {Home} from './components/home/components/Home';
+import {Login} from './components/auth/components/Login';
+import {Register} from './components/auth/components/Register';
 import {UserSearch} from './components/users/Users';
 import {Events} from './components/events/components/Events';
 import {ProfileSettings} from './components/profile/Profile';
+import {PrivateRoute} from './PrivateRoute';
 
 import './styles/App.scss';
 
 class App extends Component {
     state = {
+      authed: false,
       open: false,
     };
 
@@ -33,7 +37,7 @@ class App extends Component {
     render() {
         console.log(omit({ name: 'Benjy', age: 18 }, [ 'name' ])); // => { age: 18 }
         
-        const {open} = this.state;
+        const {authed, open} = this.state;
         return (
           <div>
             <Menu />
@@ -47,27 +51,15 @@ class App extends Component {
             >
             menu children
             </Drawer>
-
-            <Route exact path="/" component={Home} />
-            <Route path="/events" component={Events} />
-            <Route path="/usersearch" component={UserSearch} />
-            <Route path="/profile" component={ProfileSettings} />
-            {/* <h1 onClick={this.onSwitch}>My React App!</h1> 
-            <Container className="h-100">
-              <div className="d-flex justify-content-center h-100">
-                <Search />
-              </div>
-            </Container>
-            <UserSearch />
-
-            <Container>
-              <TimeLine timeLines={timeLines} />
-            </Container>
-
-            <Container>
-              <ProfileSettings />
-            </Container>
-            */}
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/events" component={Events} />
+              <Route path="/usersearch" component={UserSearch} />
+              <PrivateRoute authed={authed} path='/profile' component={ProfileSettings} />
+            </Switch>
+            {/* <h1 onClick={this.onSwitch}>My React App!</h1> */}
           </div>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import {Flash} from '../../flash/Flash';
-import {Slides} from '../../Slide';
+import {Slides} from '../../slides/components/Slide';
 
 export const Home = () => {
     return (
